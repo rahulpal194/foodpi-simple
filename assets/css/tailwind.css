@@ -1,0 +1,19 @@
+@import "tailwindcss";
+@theme {
+    --font-roboto: "Roboto", sans-serif;
+    --color-primary: rgb(234,25,0,1);
+    --color-secondary: #FFF2F1;
+    --shadow-header: 0 0 8px 0 rgba(0, 0, 0, .12);
+}
+@layer base{
+    html{@apply scroll-smooth sm:overflow-x-auto overflow-x-hidden}
+    body{@apply font-roboto text-[#323D4E] scroll-smooth sm:overflow-x-visible overflow-x-hidden}
+    .header{@apply fixed top-0 bg-transparent left-0 w-full z-10 transition-all duration-150 ease-in-out}
+    .header img {@apply w-auto h-12}
+    .primary-btn {@apply inline-flex items-center h-12 px-8 rounded-lg bg-primary text-white text-sm font-semibold}
+    .hover-btn {@apply inline-flex items-center h-12 px-8 rounded-lg bg-secondary text-primary text-sm font-semibold hover:text-white hover:bg-primary transition-all duration-300}
+    .outline-btn {@apply inline-flex items-center h-12 px-8 rounded-lg bg-transparent text-primary border-2 border-primary text-sm font-semibold}
+}
+@layer utilities{
+    .container {@apply max-w-6xl w-full px-5 mx-auto}
+}
