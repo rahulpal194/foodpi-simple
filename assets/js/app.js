@@ -1,12 +1,17 @@
 //Header fixed onscroll part start
 window.addEventListener('scroll', function(){
     const headernav = document.querySelector('.header')
+<<<<<<< HEAD
     if(window.pageYOffset >= 10){
+=======
+    if(window.pageYOffset >= 100){
+>>>>>>> a7002cb50f5ddcbcffbd57a5b76c3d3b3be4604a
         headernav?.classList.add('bg-white',"shadow-header")
     }
     else{
         headernav?.classList.remove('bg-white', "shadow-header")
     }
+<<<<<<< HEAD
 })
 
 //toggle navbar responsive
@@ -35,3 +40,6 @@ function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
+=======
+})
+>>>>>>> a7002cb50f5ddcbcffbd57a5b76c3d3b3be4604a
