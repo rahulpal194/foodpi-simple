@@ -1,0 +1,71 @@
+@import "tailwindcss";
+@theme {
+    --font-roboto: "Roboto", sans-serif;
+    --color-primary: rgb(234,25,0,1);
+    --color-secondary: #FFF2F1;
+    --shadow-header: 0 0 8px 0 rgba(0, 0, 0, .12);
+    --shadow-cardbtn: 0 14px 26px -12px rgba(0,0,0,.42),0 4px 23px 0px rgba(0,0,0,.12),0 8px 10px -5px rgba(0,0,0,.2);
+    --shadow-installcard: 0 0 0 1px rgba(143,160,241,0.2),0 10px 20px rgba(213,220,247,0.59);
+}
+@layer base{
+    html{@apply scroll-smooth sm:overflow-x-auto overflow-x-hidden}
+    body{@apply font-roboto text-[#323D4E] scroll-smooth sm:overflow-x-visible overflow-x-hidden}
+    .header{@apply fixed top-0 bg-transparent left-0 w-full z-10 transition-all duration-150 ease-in-out}
+    .header img {@apply w-auto h-11}
+    .primary-btn {@apply inline-flex items-center h-12 px-8 rounded-lg bg-primary text-white text-sm font-semibold}
+    .hover-btn {@apply inline-flex items-center h-12 px-8 rounded-lg bg-secondary text-primary text-sm font-semibold hover:text-white hover:bg-primary transition-all duration-300}
+    .outline-btn {@apply inline-flex items-center justify-center h-12 px-10 rounded-lg bg-transparent text-primary border-2 border-primary text-sm font-semibold}
+    .header ul li a{@apply relative after:absolute after:top-10 after:content-[""] after:w-0 hover:after:w-full after:h-0.5 after:bg-primary after:block transition-all duration-300 ease-linear}
+
+    .ini-feature-navs {@apply grid grid-cols-[repeat(auto-fit,minmax(270px,1fr))] gap-6 sm:gap-8}
+    .ini-feature-navs a {@apply w-fit inline-flex items-center capitalize gap-4}
+    .ini-features-navs a:hover span {@apply underline}
+    .ini-pricing-card .plan-items .plan-item{@apply p-2.5 border-b border-[#ededed] bg-[#fcfcfc] hover:bg-[#eff4f7] content-center text-center text-sm text-[#8e9baf]}
+
+    .ini-pricing-card .plan-header {@apply text-lg font-medium p-4 content-center text-center uppercase}
+    .ini-pricing-card .plan-price-amount .plan-price-currency{@apply align-super text-base font-normal}
+    .ini-pricing-card .plan-price{@apply content-center text-center p-4} 
+    .ini-pricing-card{@apply flex flex-col flex-1 bg-white border border-[#ededed] rounded}
+    .ini-pricing-card .plan-footer{@apply p-3 content-center text-center mt-auto}
+    .ini-pricing-card .buy-now-btn{@apply block w-full text-center px-3 py-2 text-white rounded hover:shadow-cardbtn opacity-[.8] transition-all duration-500}
+
+    .ini-pricing-card.regular .plan-header{@apply text-[#06d6a0]}
+    .ini-pricing-card.regular .plan-price-amount{@apply text-[#06d6a0]}
+    .ini-pricing-card.regular .buy-now-btn {@apply bg-[#06d6a0]}
+
+    .ini-pricing-card.extended .plan-header{@apply text-[#039be5]}
+    .ini-pricing-card.extended .plan-price-amount{@apply text-[#039be5]}
+    .ini-pricing-card.extended .buy-now-btn {@apply bg-[#039be5]}
+
+    .ini-pricing-card.reseller .plan-header{@apply text-[#eda514]}
+    .ini-pricing-card.reseller .plan-price-amount{@apply text-[#eda514]}
+    .ini-pricing-card.reseller .buy-now-btn {@apply bg-[#eda514]}
+
+    .ini-install-card .plan-name{@apply uppercase text-lg font-normal text-white p-5 bg-primary content-center text-center rounded-t-2xl}
+    .ini-install-card .plan-price-amount .plan-price-currency{@apply align-super text-base font-normal}
+    .ini-install-card .plan-price{@apply content-center text-center p-4} 
+    .ini-install-card {@apply flex flex-col flex-1 bg-white border border-[#ededed] rounded-t-2xl rounded-b-sm hover:shadow-installcard transition-all duration-500}
+    .ini-install-card .plan-items .plan-item{@apply p-2.5 border-b border-[#ededed] content-center text-center text-sm text-[#8e9baf]}
+    .ini-install-card .plan-footer{@apply p-3 content-center text-center mt-auto}
+    .ini-install-card .contact-btn{@apply block mx-auto w-fit text-center px-6 py-3 bg-primary text-white rounded-full hover:shadow-cardbtn opacity-[.8] transition-all duration-500}
+
+    .gateway-card {@apply w-full h-12 sm:h-[68px] grid place-items-center rounded-lg shadow-md bg-white}
+
+    .card{@apply p-6  hover:bg-[#fcfcfc] bg-[#eff4f7] border border-[#ededed] rounded-lg hover:shadow-md transition-all duration-300}
+
+    .footer{@apply bg-[#444f60] py-6}
+    .footer img{@apply h-8 w-auto}
+    .footer .copyright {@apply text-white}
+
+
+    .navbar-brand {@apply flex items-center justify-between}
+    .responsive-navbar {@apply hidden bg-white shadow-md py-6 px-4}
+    .responsive-navbar.active{@apply block!}
+
+    .backtotop{@apply cursor-pointer fixed bottom-6 right-6 z-999 bg-[#66676b] w-11 h-11 rounded-full text-white opacity-0 invisible transition-all duration-300}
+    .backtotop.active{@apply opacity-100! visible!}
+
+}
+@layer utilities{
+    .container {@apply max-w-[1192px] w-full px-5 mx-auto}
+}
